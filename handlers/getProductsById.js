@@ -29,43 +29,4 @@ export const getProductsById = async (event) => {
     } catch (error) {
         return createResponse(JSON.stringify(error));
     }
-
-
-    //     if(product) {
-    //         return({
-    //             statusCode: 200,
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 'Access-Control-Allow-Origin': '*',
-    //                 'Access-Control-Allow-Credentials': true,
-    //             },
-    //             body: JSON.stringify(product),
-    //         })
-    //     } else {
-    //         return {
-    //             statusCode: 200,
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 'Access-Control-Allow-Origin': '*',
-    //                 'Access-Control-Allow-Credentials': true,
-    //             },
-    //             body: errorMessage,
-    //         }
-    //     }
-    //     // productsList.length ? 
-    //     //     createResponse(JSON.stringify(productsList)) :
-    //     //     createResponse(erroeMessage);
-    // } catch (error) {
-    //     return {
-    //         statusCode: 200,
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Access-Control-Allow-Origin': '*',
-    //             'Access-Control-Allow-Credentials': true,
-    //         },
-    //         body: JSON.stringify(error),
-    //     };
-    // }
-
-
 };

@@ -30,6 +30,8 @@ provider:
 plugins:
   - serverless-webpack
 
+
+
 # you can overwrite defaults here
 #  stage: dev
 #  region: us-east-1
