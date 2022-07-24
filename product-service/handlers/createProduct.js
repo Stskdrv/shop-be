@@ -1,8 +1,7 @@
-import { getResponse } from '../helpers/response';
+import createResponse from '../utils/createResponse';
 import { createProduct } from '../db/createProduct';
 import { productValidation } from '../db/validation/productValidation';
-import { ERRORS, ERROR_TYPES } from '../constants/error';
-import { RESPONSE_STATUSES } from '../constants/response';
+import { RESPONSE } from '../constants';
 
 export const createProductHandler = async (event = {}) => {
   let response;
@@ -25,13 +24,11 @@ export const createProductHandler = async (event = {}) => {
 
     console.log('Product created: ', product);
 
-    response = getResponse(200, product);
+    response = createResponse(RESPONSE.STATUSES.OK, product);
   } catch (err) {
     console.log(err);
 
-    const error = ERRORS[err && err.message] || ERRORS[ERROR_TYPES.DEFAULT];
-
-    response = getResponse(error.code, error);
+    response = createResponse(RESPONSE.STATUSES.SERVER_ERROR, err);
   }
 
   return response;

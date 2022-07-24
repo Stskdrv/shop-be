@@ -1,4 +1,6 @@
 import productsList from '../../data/productsList.json';
+import { RESPONSE } from '../constants';
+import createResponse from '../utils/createResponse';
 
 async function findProductById(id) {
     return productsList.find(product => product.id === id);
@@ -10,23 +12,14 @@ export const getProductsById = async (event) => {
     const id = event.pathParameters.id;
     const product = await findProductById(id);
     const errorMessage = {"error": "Product not found"};
-    const createResponse = (resp) => ({
-        statusCode: 200,
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Credentials': true,
-        },
-        body: resp,
-    });
 
     try {
         if(product) {
-            return createResponse(JSON.stringify(product));
+            return createResponse(_, product);
         } else {
-            return createResponse(JSON.stringify(errorMessage));
+            return createResponse(RESPONSE.STATUSES.NOT_FOUND, errorMessage);
         }
     } catch (error) {
-        return createResponse(JSON.stringify(error));
+        return createResponse(RESPONSE.STATUSES.NOT_FOUND, error);
     }
 };

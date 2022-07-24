@@ -22,3 +22,5 @@ const createClient = async () => {
 
     return client;
 };
+
+export default createClient;

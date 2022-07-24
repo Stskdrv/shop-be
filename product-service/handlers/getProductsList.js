@@ -1,25 +1,18 @@
 import productsList from '../../data/productsList.json';
+import { RESPONSE } from '../constants';
+import createResponse from '../utils/createResponse';
 
 
 export const getProductsList = async (event) => {
     const errorMessage = {"error": 'Products not found'};
-    const createResponse = (resp) => ({
-        statusCode: 200,
-        headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Credentials': true,
-        },
-        body: resp,
-    });
 
     try {
         if(productsList.length) {
-            return createResponse(JSON.stringify(productsList));
+            return createResponse(_,productsList);
         } else {
-            return createResponse(JSON.stringify(errorMessage));
+            return createResponse(RESPONSE.STATUSES.NOT_FOUND,errorMessage);
         }
     } catch (error) {
-        return createResponse(JSON.stringify(error));
+        return createResponse(RESPONSE.STATUSES.SERVER_ERROR,error);
     }
 };
