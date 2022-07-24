@@ -1,9 +1,9 @@
 import createResponse from '../utils/createResponse';
-import { createProduct } from '../db/createProduct';
+import { insertProduct } from '../db/createProduct';
 import { productValidation } from '../db/validation/productValidation';
 import { RESPONSE } from '../constants';
 
-export const createProductHandler = async (event = {}) => {
+export const createProduct = async (event = {}) => {
   let response;
 
   console.log('createProduct');
@@ -20,13 +20,13 @@ export const createProductHandler = async (event = {}) => {
       throw new Error('Product validation error');
     }
 
-    const product = await createProduct(data);
+    const product = await insertProduct(data);
 
     console.log('Product created: ', product);
 
     response = createResponse(RESPONSE.STATUSES.OK, product);
   } catch (err) {
-    console.log(err);
+    console.log('error', err);
 
     response = createResponse(RESPONSE.STATUSES.SERVER_ERROR, err);
   }

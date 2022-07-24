@@ -1,18 +1,23 @@
 import productsList from '../../data/productsList.json';
+import { getAllProducts } from '../db/getAllProducts';
 import { RESPONSE } from '../constants';
 import createResponse from '../utils/createResponse';
 
 
 export const getProductsList = async (event) => {
+    let response;
     const errorMessage = {"error": 'Products not found'};
 
+    console.log('getProductList', event);
+
     try {
-        if(productsList.length) {
-            return createResponse(_,productsList);
-        } else {
-            return createResponse(RESPONSE.STATUSES.NOT_FOUND,errorMessage);
-        }
+        const result = await getAllProducts();
+        console.log('Response', result);
+        response =  createResponse(_,result.rows);
     } catch (error) {
-        return createResponse(RESPONSE.STATUSES.SERVER_ERROR,error);
+        console.log('Error', error);
+        response =  createResponse(RESPONSE.STATUSES.SERVER_ERROR,error);
     }
+
+    return response;
 };
