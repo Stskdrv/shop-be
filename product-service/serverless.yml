@@ -56,12 +56,20 @@ environment:
 #    - include-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  getProductsById:
+    handler: handler.getProductsById
     events:
       - http:
-          path: product
+          path: products/{id}
           method: get
+          cors: True
+  getProductsList:
+    handler: handler.getProductsList
+    events:
+      - http:
+          path: products
+          method: get
+          cors: True
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
