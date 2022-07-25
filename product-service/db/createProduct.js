@@ -1,5 +1,5 @@
 import { createClient } from './client';
-import { CREATE_PRODUCT, CREATE_PRODUCT } from './queries';
+import { CREATE_PRODUCT, CREATE_STOCK } from './queries';
 
 export const insertProduct = async (product) => {
   let client;
@@ -17,7 +17,7 @@ export const insertProduct = async (product) => {
     console.log(result);
 
     const [entry] = result.rows;
-    await client.query(CREATE_PRODUCT, [entry.id, product.count]);
+    await client.query(CREATE_STOCK, [entry.id, product.count]);
     await client.query('COMMIT');
 
     return {

@@ -1,6 +1,6 @@
 const  { Client } = require('pg');
 
-const createClient = async () => {
+export const createClient = async () => {
     const { PG_HOST, PG_PORT, PG_DATABASE, PG_USERNAME, PG_PASSWORD } = process.env;
 
     const dbOptions = {
@@ -22,5 +22,3 @@ const createClient = async () => {
 
     return client;
 };
-
-export default createClient;

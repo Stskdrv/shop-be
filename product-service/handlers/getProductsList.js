@@ -1,4 +1,3 @@
-import productsList from '../../data/productsList.json';
 import { getAllProducts } from '../db/getAllProducts';
 import { RESPONSE } from '../constants';
 import createResponse from '../utils/createResponse';

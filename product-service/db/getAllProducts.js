@@ -8,6 +8,8 @@ export const getAllProducts = async () => {
     client = await createClient();
     const result = await client.query(ALL_PRODUCTS);
 
+    console.log(result);
+
     return result;
   } finally {
     if (client) {

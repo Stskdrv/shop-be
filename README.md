@@ -24,8 +24,11 @@ Was done:
 
  * 4.1 DB was created with AWS console. RDS on PostgreSQL. After it tables was created with DBeaver. SQL script with test examples was added in db folder;
  * 4.2 Points related to this task done
- * 4.3 In progress
- * 4.4 In progress
+ * 4.3 Done
+  getProductById GET - https://lox06q8imd.execute-api.eu-west-1.amazonaws.com/dev/products/{id}
+  getProductList GET - https://lox06q8imd.execute-api.eu-west-1.amazonaws.com/dev/products
+  createProduct POST - https://lox06q8imd.execute-api.eu-west-1.amazonaws.com/dev/products
+ * 4.4 Done
 
  FrontEnd app integrated with /products API.
 
