@@ -13,7 +13,7 @@ export const createClient = async () => {
             rejectUnautorized: false
         },
 
-        connectionTimeoutMillis: 5000
+        connectionTimeoutMillis: 7000
     };
 
     const client = new Client(dbOptions);

@@ -16,8 +16,9 @@ export const getProductsById = async (event) => {
     try {
         if(product) {
             console.log('Product: ', product);
-            return createResponse(_, product);
+            return createResponse(RESPONSE.STATUSES.OK, product);
         } else {
+            console.log('Product: ', product);
             return createResponse(RESPONSE.STATUSES.NOT_FOUND, errorMessage);
         }
     } catch (error) {

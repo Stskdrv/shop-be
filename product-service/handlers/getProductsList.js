@@ -11,8 +11,13 @@ export const getProductsList = async (event) => {
 
     try {
         const result = await getAllProducts();
-        console.log('Response', result);
-        response =  createResponse(_,result.rows);
+        if (result) {
+            console.log('Response', result);
+            response =  createResponse(RESPONSE.STATUSES.OK,result.rows);
+        } else {
+            console.log('Products not found', errorMessage);
+            response =  createResponse(RESPONSE.STATUSES.OK,result.rows);
+        }
     } catch (error) {
         console.log('Error', error);
         response =  createResponse(RESPONSE.STATUSES.SERVER_ERROR,error);

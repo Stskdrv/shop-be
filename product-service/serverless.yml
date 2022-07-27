@@ -9,11 +9,11 @@ provider:
   stage: dev
   region: eu-west-1
   environment:
-    PG_HOST: shop-1.cchqo0bzhybx.eu-west-1.rds.amazonaws.com
-    PG_PORT: 5432
-    PG_DATABASE: shop
-    PG_USERNAME: ${process.env.PG_USERNAME}
-    PG_PASSWORD: ${process.env.PG_PASSWORD}
+    PG_HOST: '${process.env.PG_HOST}'
+    PG_PORT: '${process.env.PG_PORT}'
+    PG_DATABASE: '${process.env.PG_DATABASE}'
+    PG_USERNAME: '${process.env.PG_USERNAME}'
+    PG_PASSWORD: '${process.env.PG_PASSWORD'
 
 
 plugins:
