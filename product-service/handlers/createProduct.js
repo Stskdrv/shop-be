@@ -17,7 +17,7 @@ export const createProduct = async (event = {}) => {
     if (error) {
       console.log('Product validation error: ', error);
 
-      throw new Error('Product validation error');
+      throw new Error({code: RESPONSE.STATUSES.BAD_REQUEST, message:'Product validation error'});
     }
 
     const product = await insertProduct(data);
