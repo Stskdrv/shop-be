@@ -1,7 +1,7 @@
 ## BE on microservices for my Basic White Store. 
 # FE repo you can find here: https://github.com/Stskdrv/shop-react-redux-cloudfront
 
-# Task 3:
+## Task 3:
 Was done:
 
  * 3.1 Created a lambda function called getProductsList https://8ekiqxowx5.execute-api.eu-west-1.amazonaws.com/dev/products
@@ -9,8 +9,7 @@ Was done:
  * 3.3 Pull request created https://github.com/Stskdrv/shop-be/pull/1
 
  FrontEnd app integrated with /products API.
-
- # Extra tasks
+### Extra tasks
 
  - Async/await is used in lambda functions
  - ES6 modules are used for Product Service implementation
@@ -19,7 +18,7 @@ Was done:
  - Main error scenarios are handled by API ("Product not found" error).
 
 
-# Task 4:  PLEASE NOTE: WORK IN PROGRESS PLEASE WAIT FEW MORE TIME BEFORE REVIEW
+## Task 4: 
 Was done:
 
  * 4.1 DB was created with AWS console. RDS on PostgreSQL. After it tables was created with DBeaver. SQL script with test examples was added in db folder;
@@ -32,7 +31,13 @@ Was done:
 
  FrontEnd app integrated with /products API.
 
- # Extra tasks
+ ### Extra tasks
 
  - All lambdas do console.log for each incoming requests and their arguments
  - All lambdas return error 500 status code on any error (DB connection, any unhandled error in code)
+
+ ## Task 5:  PLEASE NOTE: WORK IN PROGRESS PLEASE WAIT FEW MORE TIME BEFORE REVIEW. Could you mention me in comments please and I will ping you when everything will be done! Thank you!
+Was done:
+
+ * 5.1 new service ***import-service*** was created, new S3-bucket was created with aws-console.
+ 
