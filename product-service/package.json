@@ -8,5 +8,9 @@
   },
   "scripts": {
     "test": "jest"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1185.0",
+    "csv-parser": "^3.0.0"
   }
 }
